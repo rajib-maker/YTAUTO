@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Auto Comment Filler",
+  "version": "1.0",
+  "description": "A Chrome extension to fill the comment box on specified YouTube videos.",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
